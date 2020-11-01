@@ -1,0 +1,13 @@
+[package]
+name = "qca-mbscanner-config"
+version = "0.1.0"
+authors = ["Aditya Kresna <aditya.kresna@outlook.co.id>"]
+edition = "2018"
+
+[dependencies]
+qca-common = { path = "../qca-common" }
+serde = { version = "1.0.117", features = ["derive"] }
+serde_json = "1.0.59"
+serde_repr = "0.1.6"
+serde_yaml = "0.8.13"
+serialport = "3.3.0"
