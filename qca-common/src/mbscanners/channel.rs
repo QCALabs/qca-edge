@@ -1,5 +1,5 @@
-use crate::device::MBDevice;
-use qca_common::{IJsonSerializable, IYamlSerializable};
+use crate::mbscanners::device::MBDevice;
+use crate::{IJsonSerializable, IYamlSerializable};
 use serde::{Deserialize, Serialize};
 use serialport::{DataBits, FlowControl, Parity, StopBits};
 use std::net::SocketAddrV4;

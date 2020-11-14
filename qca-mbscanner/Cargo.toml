@@ -6,7 +6,6 @@ edition = "2018"
 
 [dependencies]
 qca-common = { path = "../qca-common" }
-qca-mbscanner-config = { path = "../qca-mbscanner-config" }
 serde = { version = "1.0.117", features = ["derive"] }
 serde_yaml = "0.8.13"
 serde_json = "1.0.59"

@@ -2,7 +2,6 @@
 members = [
     "qca-common",
     "qca-mbscanner",
-    "qca-mbscanner-config",
 ]
 
 [profile.dev]

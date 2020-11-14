@@ -1,5 +1,5 @@
-use crate::scanline::MBScanline;
-use qca_common::{IJsonSerializable, IYamlSerializable};
+use crate::mbscanners::scanline::MBScanline;
+use crate::{IJsonSerializable, IYamlSerializable};
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, PartialEq, Debug, Clone)]

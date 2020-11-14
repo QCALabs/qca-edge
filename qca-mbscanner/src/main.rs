@@ -1,11 +1,11 @@
-use qca_common::{IJsonSerializable, IYamlSerializable};
-use qca_mbscanner_config::channel::{
+use qca_common::mbscanners::channel::{
     MBBaud, MBChannel, MBChannelAddress, MBChannelRTUAddress, MBChannelTCPAddress, MBDataBits, MBFlowControl, MBParity,
     MBStopBits,
 };
-use qca_mbscanner_config::device::MBDevice;
-use qca_mbscanner_config::scanline::{MBScanline, MBScanlineCode};
-use qca_mbscanner_config::MBConfig;
+use qca_common::mbscanners::device::MBDevice;
+use qca_common::mbscanners::scanline::{MBScanline, MBScanlineCode};
+use qca_common::mbscanners::MBConfig;
+use qca_common::{IJsonSerializable, IYamlSerializable};
 use std::time::Duration;
 
 fn main() {

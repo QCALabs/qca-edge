@@ -1,4 +1,4 @@
-use qca_common::{IJsonSerializable, IYamlSerializable};
+use crate::{IJsonSerializable, IYamlSerializable};
 use serde::{Deserialize, Serialize};
 use std::time::Duration;
 

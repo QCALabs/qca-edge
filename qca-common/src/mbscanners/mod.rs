@@ -2,8 +2,8 @@ pub mod channel;
 pub mod device;
 pub mod scanline;
 
-use crate::channel::MBChannel;
-use qca_common::{IJsonSerializable, IYamlSerializable};
+use crate::mbscanners::channel::MBChannel;
+use crate::{IJsonSerializable, IYamlSerializable};
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
