@@ -6,13 +6,12 @@ use qca_common::mbscanners::device::MBDevice;
 use qca_common::mbscanners::scanline::{MBScanline, MBScanlineCode};
 use qca_common::mbscanners::MBConfig;
 use qca_common::{IJsonSerializable, IYamlSerializable};
-use std::time::Duration;
 
 fn main() {
     let mut mb_config = MBConfig { channels: Vec::new() };
     mb_config.channels.push(MBChannel {
-        timeout: Duration::from_millis(500),
-        interframe_delay: Duration::from_millis(10),
+        timeout_ms: 500,
+        interframe_delay_ms: 10,
         address: MBChannelAddress::TCP(MBChannelTCPAddress {
             socket_address: "127.0.0.1:502".parse().unwrap(),
         }),
@@ -22,13 +21,13 @@ fn main() {
                 scanlines: vec![
                     MBScanline {
                         function_code: MBScanlineCode::FC03,
-                        interval: Duration::from_secs(1),
+                        interval_ms: 1000,
                         length: 5,
                         start_address: 100,
                     },
                     MBScanline {
                         function_code: MBScanlineCode::FC01,
-                        interval: Duration::from_secs(1),
+                        interval_ms: 1000,
                         length: 1,
                         start_address: 1,
                     },
@@ -38,7 +37,7 @@ fn main() {
                 slave_address: 1,
                 scanlines: vec![MBScanline {
                     function_code: MBScanlineCode::FC03,
-                    interval: Duration::from_millis(200),
+                    interval_ms: 200,
                     length: 1,
                     start_address: 1,
                 }],
@@ -46,8 +45,8 @@ fn main() {
         ],
     });
     mb_config.channels.push(MBChannel {
-        timeout: Duration::from_millis(500),
-        interframe_delay: Duration::from_millis(10),
+        timeout_ms: 500,
+        interframe_delay_ms: 10,
         address: MBChannelAddress::RTU(MBChannelRTUAddress {
             port_address: "/dev/ttyUSB0".into(),
             baud: MBBaud::B115200,
@@ -60,7 +59,7 @@ fn main() {
             slave_address: 1,
             scanlines: vec![MBScanline {
                 function_code: MBScanlineCode::FC03,
-                interval: Duration::from_secs(1),
+                interval_ms: 1000,
                 length: 3,
                 start_address: 434,
             }],

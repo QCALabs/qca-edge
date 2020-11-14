@@ -1,6 +1,5 @@
 use crate::{IJsonSerializable, IYamlSerializable};
 use serde::{Deserialize, Serialize};
-use std::time::Duration;
 
 #[derive(Serialize, Deserialize, PartialEq, Ord, PartialOrd, Eq, Debug, Clone, Copy)]
 #[repr(u8)]
@@ -17,7 +16,7 @@ impl IYamlSerializable for MBScanlineCode {}
 #[derive(Serialize, Deserialize, PartialEq, Debug, Clone)]
 pub struct MBScanline {
     pub function_code: MBScanlineCode,
-    pub interval: Duration,
+    pub interval_ms: u32,
     pub start_address: u16,
     pub length: u16,
 }

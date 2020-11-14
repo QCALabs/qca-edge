@@ -3,7 +3,6 @@ use crate::{IJsonSerializable, IYamlSerializable};
 use serde::{Deserialize, Serialize};
 use serialport::{DataBits, FlowControl, Parity, StopBits};
 use std::net::SocketAddrV4;
-use std::time::Duration;
 
 #[derive(Serialize, Deserialize, Debug, Copy, Clone, PartialEq, Eq)]
 pub enum MBFlowControl {
@@ -127,8 +126,8 @@ impl IYamlSerializable for MBChannelAddress {}
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct MBChannel {
     pub address: MBChannelAddress,
-    pub timeout: Duration,
-    pub interframe_delay: Duration,
+    pub timeout_ms: u32,
+    pub interframe_delay_ms: u32,
     pub devices: Vec<MBDevice>,
 }
 
